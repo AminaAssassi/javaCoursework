@@ -25,22 +25,19 @@ public class robotArena {
 	}
 	
 	public static void addRobot() {
+		//task 3.4
+		Random randomGenerator;
+		randomGenerator=new Random();
+		int val = randomGenerator.nextInt(0,5);
+		System.out.println(val);
 		
-		//task 3.3 placing the robot in the centre of the arena
+		//
 		int xmax_to_int = Integer.parseInt(xmax);
 		int halfx = xmax_to_int/2;
 		int ymax_to_int = Integer.parseInt(ymax);
 		int halfy = ymax_to_int/2;
-		//r=new robot(halfx,halfy);
+		r=new robot(halfx,halfy);
 		
-		//task 3.4 placing the robot in a random position in the arena
-		Random randomGenerator;
-		randomGenerator=new Random();
-		int valx = randomGenerator.nextInt(0,xmax_to_int);
-		int valy = randomGenerator.nextInt(0,ymax_to_int);
-		System.out.println(valx);
-		System.out.println(valy);
-		r=new robot(valx,valy);
 	}
 	
 	public String getXSize() {

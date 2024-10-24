@@ -1,12 +1,9 @@
 package CourseworkS1;
 
-import java.util.Random;
-
 public class robotArena {
 	private static String xmax;
 	private static String ymax; //defines the size of the arena
 	private static robot r;  //robot in the arena
-	//Random randomGenerator;
 	
 	/**
 	 * create the arena and add the robot in the middle
@@ -25,22 +22,11 @@ public class robotArena {
 	}
 	
 	public static void addRobot() {
-		
-		//task 3.3 placing the robot in the centre of the arena
 		int xmax_to_int = Integer.parseInt(xmax);
 		int halfx = xmax_to_int/2;
 		int ymax_to_int = Integer.parseInt(ymax);
 		int halfy = ymax_to_int/2;
-		//r=new robot(halfx,halfy);
-		
-		//task 3.4 placing the robot in a random position in the arena
-		Random randomGenerator;
-		randomGenerator=new Random();
-		int valx = randomGenerator.nextInt(0,xmax_to_int);
-		int valy = randomGenerator.nextInt(0,ymax_to_int);
-		System.out.println(valx);
-		System.out.println(valy);
-		r=new robot(valx,valy);
+		r=new robot(halfx,halfy);
 	}
 	
 	public String getXSize() {
@@ -55,7 +41,6 @@ public class robotArena {
 	}
 	
 	public static void main(String[] args) {
-		//randomGenerator=new Random();
 		//code to test the arena
 		robotArena ra = new robotArena("20,12");
 		addRobot();

@@ -1,0 +1,67 @@
+package CourseworkS1;
+
+public class robot {
+	private int x,y,robotId, dx, dy;   //robot position in x and y coordinates, the id of the ball and the direction of movement in the x and y direction.
+	private static int robotCount = 0;   //gives each robot its own number
+	
+	
+	public robot (int rx, int ry) {
+		x= rx;				//sets x and y starting position
+		y=ry;
+		robotId = robotCount++;			//sets the robots personal Id
+		dx=1;					//sets the robots movement directions in x and y directions
+		dy=1;
+	}
+	
+	/**
+	 * get value of x
+	 * @return x
+	 */
+	public int getX() {
+		return x;
+	}
+	
+	/**
+	 * get value of y
+	 * @return y
+	 */
+	public int getY() {
+		return y;
+	}
+	
+	/**
+	 * set values of x and y
+	 * @param nx	new value of x
+	 * @param ny	new value of y
+	 */
+	public void setXY(int nx, int ny) {
+		x=nx;
+		y=ny;
+	}
+	
+	/**
+	 * return information about the robot in a string
+	 * 
+	 */
+	public String toString() {
+		return "robot " + robotId + "is at " + x + "," + y;
+	}
+	
+	/**
+	 * construct a robot object with its position defined by string s.
+	 *
+	 */
+	public robot(String s) {
+		this(0,0);
+		stringSplitter ss=new StringSplitter(s, " ");
+		setXY(ss.getNthInt(0, 5), ss.getNthInt(1,8));
+	}
+	
+	
+	//main class
+	public static void main(String[] args) {
+		robot d = new robot(5,3); 
+		System.out.println(d.toString());// print where the robot is
+	}
+	
+}

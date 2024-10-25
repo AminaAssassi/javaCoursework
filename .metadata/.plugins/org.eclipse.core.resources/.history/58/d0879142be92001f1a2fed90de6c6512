@@ -79,14 +79,28 @@ public class robotArena {
 			System.out.println(valx);
 			System.out.println(valy);
 			System.out.println(getrobotAt(valx,valy));
+			//r=new robot(valx,valy);
+			//manyRobots.add(r);
+			//manyRobots();
 			robotAlready = getrobotAt(valx,valy);
-
+			//r=new robot(valx,valy);
+			//manyRobots.add(r);
+			//manyRobots();
 		}
 		while(robotAlready!= null);
 		
 		r=new robot(valx,valy);
+		//manyRobots.add(r);
 		manyRobots();
-		
+		/*
+		int valx = randomGenerator.nextInt(0,xmax_to_int);
+		int valy = randomGenerator.nextInt(0,ymax_to_int);
+		System.out.println(valx);
+		System.out.println(valy);
+		System.out.println(getrobotAt(valx,valy));
+		r=new robot(valx,valy);
+		//manyRobots.add(r);
+		manyRobots();*/
 	
 	}
 	

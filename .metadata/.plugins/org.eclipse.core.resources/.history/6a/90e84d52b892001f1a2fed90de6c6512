@@ -69,24 +69,14 @@ public class robotArena {
 		//task 3.4 placing the robot in a random position in the arena
 		Random randomGenerator;
 		randomGenerator=new Random();
-		int valx;// = randomGenerator.nextInt(0,xmax_to_int);
-		int valy;//= randomGenerator.nextInt(0,ymax_to_int);
-		robot robotAlready;// = getrobotAt(valx,valy);
-
-		do{
-			valx = randomGenerator.nextInt(0,xmax_to_int);
-			valy = randomGenerator.nextInt(0,ymax_to_int);
-			System.out.println(valx);
-			System.out.println(valy);
-			System.out.println(getrobotAt(valx,valy));
-			robotAlready = getrobotAt(valx,valy);
-
-		}
-		while(robotAlready!= null);
-		
+		int valx = randomGenerator.nextInt(0,xmax_to_int);
+		int valy = randomGenerator.nextInt(0,ymax_to_int);
+		System.out.println(valx);
+		System.out.println(valy);
+		System.out.println(getrobotAt(valx,valy));
 		r=new robot(valx,valy);
+		//manyRobots.add(r);
 		manyRobots();
-		
 	
 	}
 	

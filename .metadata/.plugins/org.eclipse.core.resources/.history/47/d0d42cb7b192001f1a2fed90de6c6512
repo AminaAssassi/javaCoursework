@@ -47,14 +47,13 @@ public class robot {
 	 *
 	 */
 	public boolean isHere(int sx, int sy) {
-		if (getX()==sx) {
-			if (getY()==sy) {
+		if (robot.getX()==sx) {
+			if (robot.getY()==sy) {
 				return true;
 			}
-		}else {
+		else;
 			return false;
 		}
-		return false;
 	}
 	
 	/**
@@ -62,7 +61,7 @@ public class robot {
 	 * 
 	 */
 	public String toString() {
-		return "robot " + robotId + "  is at " + x + "," + y + "\n";
+		return "robot " + robotId + " at " + x + "," + y;
 	}
 	
 	/**

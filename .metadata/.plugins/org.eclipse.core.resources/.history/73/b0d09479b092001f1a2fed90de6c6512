@@ -11,7 +11,7 @@ public class robotArena {
 	
 	static //Random randomGenerator;
 	//manyRobots();
-	//manyRobots = new ArrayList<robot>();
+		//manyRobots = new ArrayList<robot>();
 	
 	
 	void manyRobots(){
@@ -20,32 +20,11 @@ public class robotArena {
 	}
 	
 	/**
-	 * Search arraylist of robots to see if there is a robot at x,y
-	 * @param x
-	 * @param y
-	 * @return null if no robot there, otherwise return robot
-	 */
-	public static robot getrobotAt (int x, int y) {
-		for (robot r:manyRobots){
-			if(r.getX()==x) {
-				if(r.getY()==y) {
-					return r;
-					
-				}
-			}else {
-				return null;
-			}
-		}
-		return null;
-	}
-	
-	/**
 	/**
 	 * create the arena and add the robot in the middle
 	 * 
 	 */
 	public robotArena(String s) {
-		manyRobots = new ArrayList<robot>();
 		/*StringSplitter ss = new StringSplitter(s, ";");
 		StringSplitter sbp = new StringSplitter(ss.getNth(0,"5 10"), " ");
 		xmax = sbp.getNthInt(0,5);
@@ -73,9 +52,7 @@ public class robotArena {
 		int valy = randomGenerator.nextInt(0,ymax_to_int);
 		System.out.println(valx);
 		System.out.println(valy);
-		System.out.println(getrobotAt(valx,valy));
 		r=new robot(valx,valy);
-		//manyRobots.add(r);
 		manyRobots();
 	
 	}
@@ -89,7 +66,7 @@ public class robotArena {
 	}
 	public String toString() {
 		String ans = "";
-		System.out.println( "Arena size " + xmax + " by " +ymax);
+		//return "Arena size " + xmax + " by " +ymax + " with "+r.toString();
 		for (robot r:manyRobots) //ans += r.toString() + "\n";
 			ans=ans +r.toString();
 		return ans;
@@ -99,7 +76,6 @@ public class robotArena {
 		//randomGenerator=new Random();
 		//code to test the arena
 		robotArena ra = new robotArena("20,12");
-		addRobot();
 		addRobot();
 		addRobot();
 		System.out.println(ra.toString());

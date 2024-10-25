@@ -25,18 +25,8 @@ public class robotArena {
 	 * @param y
 	 * @return null if no robot there, otherwise return robot
 	 */
-	public static robot getrobotAt (int x, int y) {
-		for (robot r:manyRobots){
-			if(r.getX()==x) {
-				if(r.getY()==y) {
-					return r;
-					
-				}
-			}else {
-				return null;
-			}
-		}
-		return null;
+	public robot getrobotAt (int x, int y) {
+		
 	}
 	
 	/**
@@ -73,7 +63,6 @@ public class robotArena {
 		int valy = randomGenerator.nextInt(0,ymax_to_int);
 		System.out.println(valx);
 		System.out.println(valy);
-		System.out.println(getrobotAt(valx,valy));
 		r=new robot(valx,valy);
 		//manyRobots.add(r);
 		manyRobots();

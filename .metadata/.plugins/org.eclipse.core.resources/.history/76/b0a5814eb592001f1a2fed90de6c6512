@@ -47,14 +47,13 @@ public class robot {
 	 *
 	 */
 	public boolean isHere(int sx, int sy) {
-		if (getX()==sx) {
-			if (getY()==sy) {
+		if (robot.getX()==sx) {
+			if (robot.getY()==sy) {
 				return true;
 			}
-		}else {
+		else;
 			return false;
 		}
-		return false;
 	}
 	
 	/**

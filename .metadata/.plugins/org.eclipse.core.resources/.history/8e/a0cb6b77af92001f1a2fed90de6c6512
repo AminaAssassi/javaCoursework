@@ -40,29 +40,11 @@ public class robot {
 	}
 	
 	/**
-	 * Is the robot at this x,y position
-	 * @param sx x position
-	 * @param sy y position
-	 * @return true if robot is at sx,sy, false otherwise
-	 *
-	 */
-	public boolean isHere(int sx, int sy) {
-		if (getX()==sx) {
-			if (getY()==sy) {
-				return true;
-			}
-		}else {
-			return false;
-		}
-		return false;
-	}
-	
-	/**
 	 * return information about the robot in a string
 	 * 
 	 */
 	public String toString() {
-		return "robot " + robotId + "  is at " + x + "," + y + "\n";
+		return "robot " + robotId + " at " + x + "," + y;
 	}
 	
 	/**

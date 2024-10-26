@@ -71,7 +71,7 @@ public class robot {
 	 */
 	public robot(String s) {
 		this(0,0);
-		stringSplitter ss=new StringSplitter(s, " ");
+		//stringSplitter ss=new StringSplitter(s, " ");
 		setXY(ss.getNthInt(0, 5), ss.getNthInt(1,8));
 	}
 	

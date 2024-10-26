@@ -9,12 +9,12 @@ public class robotArena {
 	private static robot r;  //robot in the arena
 	static ArrayList<robot>manyRobots;
 	
-	static //Random randomGenerator;
+	//static //Random randomGenerator;
 	//manyRobots();
 	//manyRobots = new ArrayList<robot>();
 	
 	
-	void manyRobots(){
+	 static void manyRobots(){
 		//manyRobots = new ArrayList<robot>();
 		manyRobots.add(r);
 	}

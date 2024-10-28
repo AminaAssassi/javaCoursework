@@ -11,6 +11,8 @@ public class RobotInterface {
 	
 	private Scanner s;								// scanner used for input from user
     private robotArena myArena;				// arena in which Robots are shown
+    private ConsoleCanvas c;
+    //private static String xMax,ymax;
     /**
     	 * constructor for RobotInterface
     	 * sets up scanner used for input and the arena
@@ -22,7 +24,7 @@ public class RobotInterface {
     	
         char ch = ' ';
         do {
-        	System.out.print("Enter (A)dd Robot, get (I)nformation or e(X)it > ");
+        	System.out.print("Enter (A)dd Robot, get (I)nformation, do (D)isplay or e(X)it > ");
         	ch = s.next().charAt(0);
         	s.nextLine();
         	switch (ch) {
@@ -34,12 +36,57 @@ public class RobotInterface {
         		case 'i' :
         					System.out.print(myArena.toString());
             				break;
+        		case 'D' :
+        		case 'd' :
+        					doDisplay();  //calls the doDisplay function
+        					break;
         		case 'x' : 	ch = 'X';				// when X detected program ends
         					break;
         	}
     		} while (ch != 'X');						// test if end
         
        s.close();									// close scanner
+    }
+    /**
+     * returns the integer from the position of the x and y coordinates, takes in if they want x or y
+     
+    public static returnXOrY(String s, String xOrY) {
+    	 String[] arenaCoordinates = s.split(",");
+    	xMax=arenaCoordinates[0];
+    	ymax=arenaCoordinates[1];
+    }
+   */
+ 
+ 
+    /**
+     * get x value of the arena size
+     * @return x
+     
+    public int getXSize() {
+    	int xmax_to_int = Integer.parseInt(xmax);
+    	return xmax_to_int;
+    }
+    */
+    
+    /**
+     * get y value of the arena size
+     * @return y
+     
+    
+    public int getYSize() {
+    	int ymax_to_int = Integer.parseInt(ymax);
+    	return ymax_to_int;
+    }
+    */
+    
+    
+    /**
+     * Display the Robot arena on the console
+     */
+    void doDisplay() {
+    	c=new ConsoleCanvas(myArena.getXSize(), myArena.getYSize(), "32025204");
+    	myArena.showRobots(c);
+    	System.out.println(c.toString());
     }
     
 	public static void main(String[] args) {

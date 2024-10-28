@@ -90,12 +90,14 @@ public class robotArena {
 	
 	}
 	
-	public String getXSize() {
-		return xmax;
+	public int getXSize() {
+		int xmax_to_int = Integer.parseInt(xmax);
+		return xmax_to_int;
 	}
 	
-	public String getYSize() {
-		return ymax;
+	public int getYSize() {
+		int ymax_to_int = Integer.parseInt(ymax);
+		return ymax_to_int;
 	}
 	public String toString() {
 		String ans = "";
@@ -103,6 +105,16 @@ public class robotArena {
 		for (robot r:manyRobots) //ans += r.toString() + "\n";
 			ans=ans +r.toString();
 		return ans;
+	}
+	
+	/**
+	 * show all the Robots in the interface
+	 * @param c the canvas in which Robots are shown
+	 */
+	public void showRobots(ConsoleCanvas c) {
+		//loop through all the robots calling the displayRobot method
+		for (robot r:manyRobots)
+			r.displayRobot(c);
 	}
 	
 	public static void main(String[] args) {

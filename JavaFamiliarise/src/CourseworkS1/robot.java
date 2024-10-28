@@ -75,7 +75,15 @@ public class robot {
 		setXY(ss.getNthInt(0, 5), ss.getNthInt(1,8));
 	}
 	
-	
+	/**
+	 * display the Robot in the canvas
+	 * @param c the canvas used
+	 */
+
+	public void displayRobot(ConsoleCanvas c) {
+		//call the showRobot method in c to put R where the robot is
+		c.showRobot(getX(),getY(),'R');
+	}
 	//main class
 	public static void main(String[] args) {
 		robot d = new robot(5,3); //creating a robot

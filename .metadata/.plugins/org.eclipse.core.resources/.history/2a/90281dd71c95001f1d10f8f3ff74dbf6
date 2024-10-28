@@ -1,0 +1,33 @@
+package CourseworkS1;
+
+import java.util.Random;
+
+public class Direction {
+	
+	private enum DirectionOfTravel{
+		North,
+		East,
+		South,
+		West;
+		
+		
+		public static DirectionOfTravel GetRandomDirection() {
+			Random random = new Random();
+			return values()[random.nextInt(values().length)];
+		}
+	}
+	
+	/**
+	 * returns a random direction
+	 */
+	public randomDirection() {
+		DirectionOfTravel.GetRandomDirection();
+	}
+	
+	/**
+	 * returns the next direction
+	 */
+	public nextDirection(currentDirection) {
+		if 
+	}
+}

@@ -1,6 +1,7 @@
 package CourseworkS1;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Simple program to show arena with multiple robots
@@ -24,7 +25,7 @@ public class RobotInterface {
     	
         char ch = ' ';
         do {
-        	System.out.print("Enter (A)dd Robot, get (I)nformation, do (D)isplay or e(X)it > ");
+        	System.out.print("Enter (A)dd Robot, get (I)nformation, do (D)isplay, (M)ove robot, or e(X)it > ");
         	ch = s.next().charAt(0);
         	s.nextLine();
         	switch (ch) {
@@ -39,6 +40,16 @@ public class RobotInterface {
         		case 'D' :
         		case 'd' :
         					doDisplay();  //calls the doDisplay function
+        					break;
+        		case 'M' :
+        		case 'm' :
+        					robotArena.moveAllRobots();
+        					doDisplay();
+        					System.out.print(myArena.toString());
+        					break;
+        		case 'S' :
+        		case 's' :
+        					simulate(20);
         					break;
         		case 'x' : 	ch = 'X';				// when X detected program ends
         					break;
@@ -87,6 +98,20 @@ public class RobotInterface {
     	c=new ConsoleCanvas(myArena.getXSize(), myArena.getYSize(), "32025204");
     	myArena.showRobots(c);
     	System.out.println(c.toString());
+    }
+    
+    private void simulate (int nTimes) {
+    	for(int ct=0; ct<nTimes; ct++) {
+    		myArena.moveAllRobots();
+    		System.out.println();
+    		doDisplay();
+    		try {
+    			TimeUnit.MILLISECONDS.sleep(200);
+    		}catch (InterruptedException e) {
+    			e.printStackTrace();
+    		}
+    		
+    	}
     }
     
 	public static void main(String[] args) {

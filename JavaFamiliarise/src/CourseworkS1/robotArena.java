@@ -84,7 +84,7 @@ public class robotArena {
 		}
 		while(robotAlready!= null);
 		
-		r=new robot(valx,valy);
+		r=new robot(valx,valy,Direction.randomDirection());
 		manyRobots();
 		
 	
@@ -116,6 +116,30 @@ public class robotArena {
 		for (robot r:manyRobots)
 			r.displayRobot(c);
 	}
+	/*
+	 * tests if the x and y values are within the arena
+	 *  size and returns true if they are and false if not
+	 */
+	public static boolean canMoveHere(int x,int y) {
+		boolean canMove = true;
+		if (x<1 || x>(Integer.parseInt(xmax)-1)) {
+			canMove=false;
+		}else if(y<1 || y>((Integer.parseInt(ymax)-1))) {
+			canMove=false;
+		}else if(getrobotAt(x,y)!=null){
+			canMove=false;//there is not a robot already there
+		}
+		
+		return canMove;
+		
+	}
+	
+	public static void moveAllRobots() {
+		for (robot r:manyRobots)
+			r.tryToMove();
+		
+	}
+	
 	
 	public static void main(String[] args) {
 		//randomGenerator=new Random();
